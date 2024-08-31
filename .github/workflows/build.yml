@@ -23,11 +23,11 @@ jobs:
 
       - name: Create build dir
         working-directory: ${{github.workspace}}
-        shell: bash
+        shell: cmd
         run: mkdir -p ${{github.workspace}}\out\windows\x86\
       - name: Create build dir
         working-directory: ${{github.workspace}}
-        shell: bash
+        shell: cmd
         run: tree ${{github.workspace}}\out\
       - name: Prepare build skia
         working-directory: ${{github.workspace}}
