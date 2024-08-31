@@ -36,13 +36,13 @@ jobs:
           cp args.gn ${{github.workspace}}\out\windows\x86\
           cd skiasharp\externals\skia
           python tools\git-sync-deps
-          python ..\depot_tools\gn.py gen ${{github.workspace}}\out\windows\x86\ --target_cpu="x86"
+          python ..\depot_tools\gn.py gen '${{github.workspace}}\out\windows\x86\' --args='target_os=\"win\" target_cpu=\"x64\"
 
       - name: Build skia
         working-directory: ${{github.workspace}}
         run: |
           cd skiasharp\externals\skia
-          ..\depot_tools\ninja -D PreferredToolArchitecture=Win32 -C ${{github.workspace}}\out\windows\x86\ SkiaSharp
+          ..\depot_tools\ninja -C ${{github.workspace}}\out\windows\x86\ SkiaSharp
           cd ${{github.workspace}}\out\windows\x86\
           lib.exe /OUT:libSkiaSharp.lib *.lib
 
