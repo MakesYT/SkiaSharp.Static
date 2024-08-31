@@ -24,7 +24,7 @@ jobs:
       - name: Create build dir
         working-directory: ${{github.workspace}}
         shell: bash
-        run: mkdir -p ${{github.workspace}}\out\windows\x86\
+        run: mkdir ${{github.workspace}}\out\windows\x86\
 
       - name: Prepare build skia
         working-directory: ${{github.workspace}}
