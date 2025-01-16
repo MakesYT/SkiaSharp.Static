@@ -6,6 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          toolset: 14.42
       - uses: actions/cache@v3
         with:
           # build should be beside of git repo because it's submodule must be a empty dir when init.
@@ -61,7 +63,7 @@ jobs:
         shell: cmd
         run: |
           cd skiasharp\native\windows\libHarfBuzzSharp
-          msbuild -m -t:rebuild -p:Configuration=Release;Platform=Win32;ConfigurationType=StaticLibrary;WindowsTargetPlatformVersion=7;PlatformToolset=v142
+          msbuild -m -t:rebuild -p:Configuration=Release;Platform=Win32;ConfigurationType=StaticLibrary;WindowsTargetPlatformVersion=7;PlatformToolset=v143
       - name: Package libHarfBuzzSharp
         working-directory: ${{github.workspace}}
         run: |
