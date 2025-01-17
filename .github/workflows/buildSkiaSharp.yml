@@ -64,7 +64,7 @@ jobs:
         shell: cmd
         run: |
           cd skiasharp\native\windows\libHarfBuzzSharp
-          msbuild -m -t:rebuild -p:Configuration=Release;Platform=Win32;ConfigurationType=StaticLibrary;WindowsTargetPlatformVersion=7;PlatformToolset=v143
+          msbuild -m -t:rebuild -p:Configuration=Release;Platform=Win32;ConfigurationType=StaticLibrary;WindowsTargetPlatformVersion=10.0.19041.0;PlatformToolset=v143
       - name: Package libHarfBuzzSharp
         working-directory: ${{github.workspace}}
         run: |
