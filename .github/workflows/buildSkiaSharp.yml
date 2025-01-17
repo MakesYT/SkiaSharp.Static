@@ -9,11 +9,6 @@ jobs:
         with:
           toolset: 14.42
           arch: x86
-      - uses: actions/cache@v3
-        with:
-          # build should be beside of git repo because it's submodule must be a empty dir when init.
-          path: out/windows/x86/obj
-          key: ${{ runner.os }}-skia-build-cache
       - name: Clone source
         working-directory: ${{github.workspace}}
         shell: bash
