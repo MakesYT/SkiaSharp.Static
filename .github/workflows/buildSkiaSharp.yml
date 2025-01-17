@@ -68,7 +68,7 @@ jobs:
       - name: Package libHarfBuzzSharp
         working-directory: ${{github.workspace}}
         run: |
-          cd skiasharp\native\windows\libHarfBuzzSharp\bin\x86\Release
+          cd skiasharp\native\windows\libHarfBuzzSharp\bin\Win32\Release
           7z a -y -mx9 libHarfBuzzSharp.7z ./libHarfBuzzSharp.lib
       - uses: actions/upload-artifact@v3
         with:
